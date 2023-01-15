@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script>
+      document.title = 'exercises7'
+    </script>
+  </head>
+
+  <body>
+    <script>
+        strs = ['hello', 'world', 'this', 'should', 'be', 'in', 'uppercase']
+        strs.forEach(function (str) {
+          console.log(str.toUpperCase());
+        });
+
+        double = ['ECHO', 'echo']
+        result = [];
+
+        double.forEach(function (db){
+          doubleHelper(db,result);
+        });
+
+        console.log(result);
+
+        function doubleHelper(str, arr){
+          arr.push(str);
+          arr.push(str);
+        }
+
+        nums = [1,2,3];
+        sum = 0;
+        nums.forEach( function forEach(num){
+          sum += num;
+        });
+        console.log(sum);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Exercises8</title>
+  </head>
+
+  <body>
+    <button id="todo-button" onclick=changeText()>Not Done</button>
+
+    <button id="up-button" onclick=up()>Up</button>
+
+    <button id="down-button" onclick=down()>Down</button>
+
+    <div id="counter">0</div>
+
+    <input id = "create" type = "text"/>
+
+    <button id="show-button" onclick=show()>Show</button>
+    <script>
+
+      function changeText(){
+        let button = document.getElementById('todo-button');
+        button.textContent = "Done";
+      } 
+
+      function up(){
+        let value = document.getElementById("counter");
+        count = parseInt(value.textContent);
+        count +=1;
+        value.textContent = count;
+      }
+
+      function down(){
+        value = document.getElementById("counter");
+        count = parseInt(value.textContent);
+        count -=1;
+        value.textContent = count;
+      }
+
+      function show(){
+        let textbox=document.getElementById("create");
+        let text=textbox.value;
+
+        let divInsert = document.createElement('div');
+        divInsert.innerText=text;
+        document.body.appendChild(divInsert);
+      }
+    </script>
+  </body>
+</html>
