@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script>
+      document.title='cartTotaler'
+    </script>
+  </head>
+
+  <body>
+    <p>Check the console log</p>
+    <div id="receipt"></div>
+    <script>
+      cartArray=[{name: 'Apple', price: 4, quantity: 2}, 
+                {name: 'Orange', price:3, quantity: 3}];
+
+      let sum = 0;
+      function cartTotal(arr){
+        arr.forEach(function (item) {
+          sum += item.price * item.quantity;
+        });
+
+        console.log(sum);
+      }
+
+      cartTotal(cartArray);
+
+      const receipt = document.getElementById('receipt');
+      function displayReceipt(arr){
+        receipt.innerHTML="";
+        arr.forEach(function (item){
+          const line = document.createElement('div');
+          totalPerItem = item.price * item.quantity;
+          line.innerText = item.name + " $" + item.price + " * " + item.quantity + " = $" + totalPerItem;
+          receipt.appendChild(line);
+        });
+        const totalLine =document.createElement('div');
+        totalLine.innerText = "Cart total = $" + sum;
+        receipt.appendChild(totalLine);
+      }
+
+      displayReceipt(cartArray);
+    </script>
+  </body>
+</html>

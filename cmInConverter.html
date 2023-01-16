@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script>
+      document.title = 'CM-INCH Converter';
+    </script>
+  </head>
+
+  <body>
+    <button onclick="converter(1/2.54)">Convert to inch</button>
+    <button onclick="converter(2.54)">Convert to cm</button>
+    <input id="value"/>
+
+    <script>
+
+      const textbox = document.getElementById("value"); 
+      function converter(factor){
+        const value = textbox.value;
+        const result = +value * factor;
+
+        const conversion = document.createElement('div');
+        conversion.innerText = result;
+        document.body.appendChild(conversion);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script>
+      document.title = "Cart Practice"
+    </script>
+  </head>
+
+  <body>
+    <button onclick="addItem('Apple')">Apple</button>
+    <button onclick="addItem('Tomato')">Tomato</button>
+    <button onclick="addItem('Eggs')">Eggs</button>
+    <button onclick="clearCart()">Clear</button>
+
+    <div id="cart"></div>
+    <script>
+
+      const cart = document.getElementById("cart");
+
+      function addItem(food){
+        const item = document.createElement("div");
+        item.innerText = food;
+        cart.appendChild(item);
+      }
+
+      function clearCart(){
+        cart.innerText = "";
+      }
+    </script>
+  </body>
+</html>

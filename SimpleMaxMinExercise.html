@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script>
+      document.title = "Exercises 13"
+    </script>
+  </head>
+
+  <body>
+
+    <script>
+
+      function max(nums){
+        //this variable can change so we use let not const
+        let currentMax = -Infinity;
+        nums.forEach(function (num) {
+         if (num > currentMax) {
+          currentMax = num;
+         }
+        });
+
+        return currentMax;
+      }
+      console.log(max([1,2,3]));
+
+      function min(nums){
+        let currentMin = Infinity;
+        nums.forEach(function (num){
+          if (num < currentMin){
+            currentMin = num;
+          }
+        });
+
+        return currentMin
+      }
+      console.log(min([1,2,3]));
+
+      function smallestUpToZero(nums){
+        let currentMinZero = Infinity;
+        let limit = 0;
+        nums.forEach(function (num){
+          if (num >= 0){
+            if (num < currentMinZero){
+              currentMinZero = num;
+            }
+          }
+        });
+
+        return currentMinZero;
+      }
+      console.log(smallestUpToZero([1, 5, -2, 4, 3, 5, 0]));
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script>
+      document.title = "Exercises12";
+    </script>
+  </head>
+
+  <body>
+    <script>
+      function makesUpper(str){
+        console.log(str.toUpperCase());
+      }
+
+      makesUpper('all lowercase');
+
+      function aboveFreezing(temps){
+        const tempsAboveFreezing = temps.filter(function (temp){
+          return temp > 32;
+        });
+
+        return tempsAboveFreezing;
+      }
+
+      //aboveFreezing([40, 67, 8, 29, 100, -3, 0]);
+
+      function removeRed(objs){
+        return objs.filter(function (obj){
+          return obj.color != 'red';
+        });
+      }
+
+      //removeRed([{ name: 'Apple', color: 'red' }, { name: 'Egg', color: 'white' }]);
+
+
+    </script>
+  </body>
+</html>

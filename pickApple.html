@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script>
+      document.title = "Pick Apples";
+    </script>
+  </head>
+
+  <body>
+    <script>
+
+      //takes an array of strings and returns the array with the first 2 apples and 1 orange removed
+      function pickFruits(fruits){
+        let counterApple = 2; //represents the amount of apples being removed from the array
+        let counterOrange = 1; //represents the amount of oranges being removed from the array
+        let newFruits = []; //represents the new list of fruits being created
+        fruits.forEach(function (fruit){
+          if (fruit === "apple" && counterApple != 0){
+            //newFruits.push();
+            counterApple -=1;
+          } else if(fruit === "orange" && counterOrange != 0){
+            //newFruit.push()
+            counterOrange -=1;
+          }else{
+            newFruits.push(fruit);
+          }
+        });
+
+        return newFruits;
+      }
+
+      console.log(pickFruits(['cherry', 'apple', 'orange', 'apple', 'banana', 'apple']));
+
+      //removes the last two apples in an array
+      function pickLastApples(fruits){
+        fruits.reverse();
+        let counter = 2;
+        newFruitList = [];
+        fruits.forEach(function(fruit){
+          if(fruit === 'apple' && counter != 0){
+            counter-=1;
+          } else{
+            newFruitList.push(fruit);
+          }
+        });
+
+        newFruitList.reverse()
+        return newFruitList
+      }
+
+      console.log(pickLastApples(['cherry', 'apple', 'orange', 'apple', 'banana', 'apple']));
+    </script>
+  </body>
+</html>

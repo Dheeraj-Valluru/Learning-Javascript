@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script>
+      document.title = "Create cart exercise";
+    </script>
+  </head>
+
+  <body>
+    <script>
+
+      let sum = 0;
+
+      function createCart(foodPrices){
+        const foods = Object.keys(foodPrices);
+
+        foods.forEach(function (food) {
+          //create the div 
+          const item = document.createElement('div');
+          const foodPrice = foodPrices[food];
+          item.innerText = food + ' $' + foodPrice;
+
+          //create the add button
+          const addButton = document.createElement('button');
+          addButton.innerText = "Add";
+
+          addButton.onclick = function(){
+            sum += foodPrice;
+          }
+
+          //append the add button to the div
+          item.appendChild(addButton);
+
+          //append the div to the body
+          document.body.appendChild(item);
+        });
+      }
+
+      createCart({Apple:3, Orange: 4, Egg: 2});
+    </script>
+  </body>
+</html>
